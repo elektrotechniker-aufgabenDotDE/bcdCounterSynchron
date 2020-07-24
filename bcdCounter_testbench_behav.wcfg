@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="bcdCounter_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="bcdCounter_testbench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="56240771fs"></ZoomStartTime>
+      <ZoomEndTime time="59475772fs"></ZoomEndTime>
+      <Cursor1Time time="59944525fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wave_markers>
+      <marker time="59785000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/bcdCounter_testbench/led_uut" type="array">
+      <obj_property name="ElementShortName">led_uut[3:0]</obj_property>
+      <obj_property name="ObjectShortName">led_uut[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/clk_in" type="logic">
+      <obj_property name="ElementShortName">clk_in</obj_property>
+      <obj_property name="ObjectShortName">clk_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/uut/clk_out_1" type="logic">
+      <obj_property name="ElementShortName">clk_out_1</obj_property>
+      <obj_property name="ObjectShortName">clk_out_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/uut/clk_div" type="logic">
+      <obj_property name="ElementShortName">clk_div</obj_property>
+      <obj_property name="ObjectShortName">clk_div</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/clk_in_half_period" type="other">
+      <obj_property name="ElementShortName">clk_in_half_period</obj_property>
+      <obj_property name="ObjectShortName">clk_in_half_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/uut/Q_qa" type="logic">
+      <obj_property name="ElementShortName">Q_qa</obj_property>
+      <obj_property name="ObjectShortName">Q_qa</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/uut/Q_qb" type="logic">
+      <obj_property name="ElementShortName">Q_qb</obj_property>
+      <obj_property name="ObjectShortName">Q_qb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/uut/J_qc" type="logic">
+      <obj_property name="ElementShortName">J_qc</obj_property>
+      <obj_property name="ObjectShortName">J_qc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/uut/K_qc" type="logic">
+      <obj_property name="ElementShortName">K_qc</obj_property>
+      <obj_property name="ObjectShortName">K_qc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/bcdCounter_testbench/uut/Q_qc" type="logic">
+      <obj_property name="ElementShortName">Q_qc</obj_property>
+      <obj_property name="ObjectShortName">Q_qc</obj_property>
+   </wvobject>
+</wave_config>
