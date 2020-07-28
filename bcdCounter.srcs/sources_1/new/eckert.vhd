@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: elektrotechniker-aufgaben.de
 -- Engineer: 
 -- 
 -- Create Date: 29.05.2020 12:24:31
@@ -33,12 +33,22 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity bcdCounter is
   Port (
-        led: out std_logic_vector (3 downto 0):=(others => '0');
-        clk: in std_logic:= '0'
+        led: out std_logic_vector (3 downto 0);
+        clk: in std_logic:= '0';
+        seg: out  STD_LOGIC_VECTOR (6 downto 0);
+        an: out  STD_LOGIC_VECTOR (7 downto 0)
         );
 end bcdCounter;
 
 architecture Behavioral of bcdCounter is
+
+component displayControl is port (
+    Clock: in std_logic;
+    inVal: in std_logic_vector(3 downto 0);
+    outVal: out std_logic_vector(6 downto 0);
+    anVal: out std_logic_vector(7 downto 0)
+    );
+end component;   
 
 component jkFlipFlop is port (
     J: in std_logic;
@@ -81,8 +91,24 @@ signal Qn_qd: std_logic:= '0';
 
 signal clk_out_1: std_logic:='0';
 signal clk_div: std_logic := '0';
+
+-- 7 segment display
+
+signal inVal_1: std_logic_vector (3 downto 0):=(others => '0');
+signal outVal_1: std_logic_vector (6 downto 0):=(others => '0');
+signal anVal_1: std_logic_vector (7 downto 0):=(others => '0');
+
+-- LED buffer
+
+signal bufferLed: std_logic_vector (3 downto 0):=(others => '0');
     
 begin
+
+displayControl_1:displayControl port map(
+    Clock => clk_out_1,
+    inVal => inVal_1,
+    outVal => outVal_1,
+    anVal => anVal_1);
 
 jkFlipFlop_qa:jkFlipFlop port map(
     Clock => clk_div,
@@ -133,9 +159,21 @@ K_qc <= Q_qb AND Q_qa;
 J_qd <= Q_qa AND Q_qb AND Q_qc;
 K_qd <= Q_qa;  
 
-led(0) <= Q_qa;
-led(1) <= Q_qb;
-led(2) <= Q_qc;
-led(3) <= Q_qd;
+bufferLed(0) <= Q_qa;
+bufferLed(1) <= Q_qb;
+bufferLed(2) <= Q_qc;
+bufferLed(3) <= Q_qd;
+
+
+led(0) <= bufferLed(0);
+led(1) <= bufferLed(1);
+led(2) <= bufferLed(2);
+led(3) <= bufferLed(3);
+
+
+inVal_1(3 downto 0) <= bufferLed(3 downto 0);
+
+seg(6 downto 0) <= outVal_1(6 downto 0);
+an(7 downto 0) <= anVal_1(7 downto 0);
 
 end Behavioral;
